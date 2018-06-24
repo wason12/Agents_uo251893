@@ -5,7 +5,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 import asw.dbManagement.repository.AgentRepository;
 
 @Service
@@ -17,7 +17,7 @@ public class InsertSampleData {
 	@PostConstruct
 	public void init() {
 		
-		Agent agente = new Agent("pepe","pepe","pepe@hotmail.es","pepe","loca","agente",1);
+		User agente = new User("pepe", "4.0&4.0", "pepe@gmail.com", "pepedni", "agente" );
 		
 		inciRepo.save(agente);
 	}

@@ -3,7 +3,7 @@ package asw.agents.webService.responses;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 
 @XmlRootElement(name = "agent")
 public class RespuestaInfoREST {	
@@ -14,7 +14,7 @@ public class RespuestaInfoREST {
 	
 	public RespuestaInfoREST() {}
 	
-	public RespuestaInfoREST(Agent agent){
+	public RespuestaInfoREST(User agent){
 		setFirstName(agent.getNombre());
 		setID(agent.getIdentificador());
 		setEmail(agent.getEmail());

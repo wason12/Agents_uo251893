@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import asw.dbManagement.GetAgent;
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 import asw.dbManagement.repository.AgentRepository;
 
 
@@ -24,7 +24,7 @@ public class GetAgentImpl implements GetAgent {
 	 * Hace uso del método findByEmail (mapeador)
 	 */
 	@Override
-	public Agent getAgent(String email) {
+	public User getAgent(String email) {
 		
 		return this.repository.findByEmail(email);
 	}

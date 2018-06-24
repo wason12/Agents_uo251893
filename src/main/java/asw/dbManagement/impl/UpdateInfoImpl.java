@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import asw.dbManagement.UpdateInfo;
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 import asw.dbManagement.repository.AgentRepository;
 
 @Service
@@ -23,7 +23,7 @@ public class UpdateInfoImpl implements UpdateInfo {
 	 * la actual coincida con la del agente
 	 */
 	@Override
-	public void updatePassword(Agent agent, String password, String newPassword) {
+	public void updatePassword(User agent, String password, String newPassword) {
 		
 		if (password != null && newPassword != null && !(password.equals(newPassword))
 				&& agent.getPassword().equals(password)) {
@@ -38,7 +38,7 @@ public class UpdateInfoImpl implements UpdateInfo {
 	 * Se comprueba que el email no esté vacío
 	 */
 	@Override
-	public void updateEmail(Agent agent, String email) {
+	public void updateEmail(User agent, String email) {
 		if(email != null){
 			agent.setEmail(email);
 			this.repository.save(agent);

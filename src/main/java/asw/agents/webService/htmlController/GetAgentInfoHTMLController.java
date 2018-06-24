@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import asw.agents.util.Assert;
 import asw.agents.webService.responses.errors.ErrorResponse;
 import asw.dbManagement.GetAgent;
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 
 @Controller
 public class GetAgentInfoHTMLController {
@@ -37,7 +37,7 @@ public class GetAgentInfoHTMLController {
 		Assert.isPasswordEmpty(password);
 		Assert.isKindNull(kind);
 
-		Agent agent = getAgent.getAgent(email);
+		User agent = getAgent.getAgent(email);
 
 		Assert.isAgentNull(agent);
 		Assert.isPasswordCorrect(password, agent);

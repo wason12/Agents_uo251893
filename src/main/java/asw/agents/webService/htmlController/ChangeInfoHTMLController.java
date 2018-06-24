@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import asw.agents.util.Assert;
 import asw.agents.webService.responses.errors.ErrorResponse;
 import asw.dbManagement.UpdateInfo;
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 
 @Controller
 public class ChangeInfoHTMLController {
@@ -35,7 +35,7 @@ public class ChangeInfoHTMLController {
 		Assert.isSamePassword(password, newPassword);
 
 		// Agent que se ha logeado antes
-		Agent p = (Agent) session.getAttribute("agent");
+		User p = (User) session.getAttribute("agent");
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 
@@ -53,7 +53,7 @@ public class ChangeInfoHTMLController {
 		Assert.isEmailValid(email);
 
 		// Agent que se ha logeado antes
-		Agent p = (Agent) session.getAttribute("agent");
+		User p = (User) session.getAttribute("agent");
 		Assert.isAgentNull(p);
 		Assert.isSameEmail(email, p.getEmail());
 

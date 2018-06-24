@@ -18,7 +18,7 @@ import asw.agents.webService.responses.RespuestaChangeInfoREST;
 import asw.agents.webService.responses.errors.ErrorResponse;
 import asw.dbManagement.GetAgent;
 import asw.dbManagement.UpdateInfo;
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 
 @RestController
 public class ChangeInfoRESTController implements ChangeInfo {
@@ -44,7 +44,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 		
 		Assert.isSamePassword(password, newPassword);	
 
-		Agent p = getAgent.getAgent(email);
+		User p = getAgent.getAgent(email);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 
@@ -72,7 +72,7 @@ public class ChangeInfoRESTController implements ChangeInfo {
 
 		Assert.isPasswordEmpty(password);
 		
-		Agent p = getAgent.getAgent(email);
+		User p = getAgent.getAgent(email);
 		Assert.isAgentNull(p);
 		Assert.isPasswordCorrect(password, p);
 		

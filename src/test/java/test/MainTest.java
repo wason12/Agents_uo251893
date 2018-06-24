@@ -38,7 +38,7 @@ import asw.agents.webService.request.PeticionChangeEmailREST;
 import asw.agents.webService.request.PeticionChangePasswordREST;
 import asw.agents.webService.request.PeticionInfoREST;
 import asw.dbManagement.GetAgent;
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 
 @SuppressWarnings("deprecation")
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -65,10 +65,10 @@ public class MainTest {
 
 	@Test
 	public void T1domainModelEqualsTest() {
-		Agent agent1 = getAgent.getAgent("paco@hotmail.com");
-		Agent agent2 = getAgent.getAgent("pac@hotmail.com");
-		Agent agent3 = getAgent.getAgent("paco@hotmail.com");
-		Agent agent4 = getAgent.getAgent("pepe@gmail.com");
+		User agent1 = getAgent.getAgent("paco@hotmail.com");
+		User agent2 = getAgent.getAgent("pac@hotmail.com");
+		User agent3 = getAgent.getAgent("paco@hotmail.com");
+		User agent4 = getAgent.getAgent("pepe@gmail.com");
 		assertFalse(agent1.equals(agent2));
 		assertFalse(agent1.equals(4));
 		assertTrue(agent1.equals(agent3));
@@ -78,20 +78,20 @@ public class MainTest {
 
 	@Test
 	public void T2domainModelToString() {
-		Agent agent1 = getAgent.getAgent("paco@hotmail.com");
+		User agent1 = getAgent.getAgent("paco@hotmail.com");
 		assertEquals(agent1.toString(),
-				"Agent [id=" + agent1.getId() + ", nombre=" + agent1.getNombre() 
+				"Agent [id=" + agent1.getIdentificador() + ", nombre=" + agent1.getNombre() 
 				+ ", password=" + agent1.getPassword() + ", email=" + agent1.getEmail()
-				+ ", ubicacion=" + agent1.getUbicacion()
+				+ ", ubicacion=" + agent1.getLocalizacion()
 				+ ", identificador=" + agent1.getIdentificador()
 				+ ", kind=" + agent1.getKind() 
-				+ ", kindCode=" + agent1.getKindCode() + "]");
+				+ ", kindCode=" + agent1.getKind() + "]");
 	}
 
 	@Test
 	public void T3domainModelHashCodeTest() {
-		Agent agent1 = getAgent.getAgent("paco@hotmail.com");
-		Agent agent3 = getAgent.getAgent("paco@hotmail.com");
+		User agent1 = getAgent.getAgent("paco@hotmail.com");
+		User agent3 = getAgent.getAgent("paco@hotmail.com");
 		assertEquals(agent1.hashCode(), agent3.hashCode());
 	}
 

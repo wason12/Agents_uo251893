@@ -16,7 +16,7 @@ import asw.agents.webService.request.PeticionInfoREST;
 import asw.agents.webService.responses.RespuestaInfoREST;
 import asw.agents.webService.responses.errors.ErrorResponse;
 import asw.dbManagement.GetAgent;
-import asw.dbManagement.model.Agent;
+import asw.dbManagement.model.User;
 
 @RestController
 public class GetAgentInfoRESTController implements GetAgentInfo {
@@ -33,7 +33,7 @@ public class GetAgentInfoRESTController implements GetAgentInfo {
 		Assert.isEmailValid(peticion.getLogin());
 		Assert.isPasswordEmpty(peticion.getPassword());
 
-		Agent agent = getAgent.getAgent(peticion.getLogin());
+		User agent = getAgent.getAgent(peticion.getLogin());
 
 		Assert.isAgentNull(agent);
 
