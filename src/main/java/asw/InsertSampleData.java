@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import asw.dbManagement.model.User;
 import asw.dbManagement.repository.AgentRepository;
 
-@Service
+//@Service
 public class InsertSampleData {
 	
 	@Autowired

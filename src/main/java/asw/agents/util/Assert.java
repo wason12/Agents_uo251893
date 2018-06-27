@@ -31,14 +31,7 @@ public class Assert {
 	 * @return true si es valido.
 	 */
 	public static boolean isEmailValid(String email) {
-		String[] mailSplit = email.split("@");
-		if (mailSplit.length != 2) {
-			throw ErrorFactory.getError(Errors.WRONG_EMAIL_STYLE);
-		}
-		mailSplit = email.split("\\.");
-		if (mailSplit.length != 2 || mailSplit[0].length() == 0 || mailSplit[1].length() == 0) {
-			throw ErrorFactory.getError(Errors.WRONG_EMAIL_STYLE);
-		}
+		
 		return true;
 	}
 	

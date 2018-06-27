@@ -4,6 +4,7 @@ public class PeticionInfoREST {
 
 	private String login;
 	private String password;
+	private String kind;
 
 	public void setLogin(String login) {
 		this.login = login;
@@ -29,5 +30,14 @@ public class PeticionInfoREST {
 	public String getPassword() {
 		return password;
 	}
+
+	public String getKind() {
+		return kind;
+	}
+
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+
 
 }

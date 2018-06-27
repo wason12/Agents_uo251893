@@ -30,7 +30,6 @@ public class GetAgentInfoRESTController implements GetAgentInfo {
 	public ResponseEntity<RespuestaInfoREST> getPOSTpetition(@RequestBody(required = true) PeticionInfoREST peticion) {
 
 		Assert.isEmailEmpty(peticion.getLogin());
-		Assert.isEmailValid(peticion.getLogin());
 		Assert.isPasswordEmpty(peticion.getPassword());
 
 		User agent = getAgent.getAgent(peticion.getLogin());
@@ -38,6 +37,8 @@ public class GetAgentInfoRESTController implements GetAgentInfo {
 		Assert.isAgentNull(agent);
 
 		Assert.isPasswordCorrect(peticion.getPassword(), agent);
+		Assert.isKindNull(peticion.getKind());
+		Assert.isKindCorrect(peticion.getKind(), agent);
 
 		/*
 		 * Añadimos la información al modelo, para que se muestre en la pagina
